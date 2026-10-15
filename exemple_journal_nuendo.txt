@@ -1,0 +1,15 @@
+Journal réel produit par FuzzPi_ed.dll (version journalisée, AVANT la correction) dans Nuendo 2 / Windows XP.
+Il montre que la DLL est chargée, que main() réussit, et que Nuendo abandonne dès sa première question (opcode 22)
+parce que le plugin répondait 0 au lieu de 'NvEf' (1316373862 = 0x4e764566).
+
+[207015] DLL_PROCESS_ATTACH dll=C:\Program Files\Steinberg\Vstplugins\FuzzPi_ed.dll
+[207015]    hote=C:\Program Files\Steinberg\Nuendo 2\Nuendo2.exe winver=0x0a280105
+[207015] main() appele, callback hote=0x00932220
+[207015] audioMasterVersion -> 2300
+[207015] main() OK, AEffect cree
+[207015]   dispatcher  op=22 idx=0 val=0 ...
+[207015]   dispatcher  op=22 -> 0
+[264593] DLL_PROCESS_DETACH
+
+Lecture : si le journal s'arrête juste après un "op=XX -> valeur", c'est cette réponse que l'hôte a refusée.
+Après la correction (op=22 -> 1316373862), le plugin s'est chargé normalement.

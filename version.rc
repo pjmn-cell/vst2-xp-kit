@@ -1,0 +1,25 @@
+#include <windows.h>
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEOS VOS__WINDOWS32
+ FILETYPE VFT_DLL
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName", "Perso\0"
+      VALUE "FileDescription", "Skeleton - example gain plugin\0"
+      VALUE "FileVersion", "1.0.0.0\0"
+      VALUE "InternalName", "Skeleton\0"
+      VALUE "OriginalFilename", "Skeleton.dll\0"
+      VALUE "ProductName", "Skeleton\0"
+      VALUE "ProductVersion", "1.0.0.0\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END
